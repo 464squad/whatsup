@@ -19,6 +19,19 @@ function App() {
 
   const [buttonClicked, setButtonClicked] = useState(null)
 
+  const [students, setStudents] = useState([])
+
+  const [stateValueVariable, functionToSetStateValue] = useState(defaultStateValueVariable)
+
+  const addToArray = (newItem)=> {
+    // update the state of the array
+    // Reference the old array
+    let newArray = students
+    newArray.push(newItem)
+
+    setStudents(newArray)
+  }
+
   const notifyClickStatus = (text) => {
     console.log('Something got clicked')
     console.log('What got clicked: ', text)
